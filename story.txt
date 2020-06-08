@@ -1,5 +1,5 @@
 [1m
-Good morning , I am Rowan. Welcome to...
+Greetings Jack, I am Guy. Welcome to...
 [1m
 [31mUMBRA
  [33mThe land of shadows
@@ -7,9 +7,12 @@ Good morning , I am Rowan. Welcome to...
 The shadows can only be destroyed by lighting each regions flame of light.
 Your journey will be cruel and unforgiving, but I trust you can cure the curse.
 [1m
-[34mRowan vanishes and you find yourself before an archway leading to a forest
+[34mGuy vanishes and you find yourself before an archway leading to a forest
 [94m[1mWill you enter?
 [37m[1m
+	1) yes
+	2) no
+11 is not a valid option, please try again
 	1) yes
 	2) no
 you slowly walk into the forest.
@@ -22,7 +25,7 @@ you slowly walk into the forest.
 [37m[1m
 	1) yes
 	2) no
-Good morning , I am Rowan. nice to meet you.
+Bonjour Jack, je suis Pierre. nice to meet you.
 You will need this sword, the monkeys in this forest are very aggresive since the land was engulfed.
 You carry on through the forest
 [1m
@@ -32,7 +35,7 @@ You carry on through the forest
 	1) fight the monkeys
 	2) carry on running through the forest
 	3) surrender to the monkeys
-11 is not a valid option, please try again
+ is not a number, please select the numbers not their answers.
 	1) fight the monkeys
 	2) carry on running through the forest
 	3) surrender to the monkeys
@@ -48,16 +51,8 @@ you enter the clearing...
 [37m[1m
 	1) fists
 	2) sword
-you did 2 damage to  King of bananas with fists
-3hp left
-[1m
-[34m
-[94m[1mWhat weapon do you attack with?
-[37m[1m
-	1) fists
-	2) sword
-you did 2 damage to  King of bananas with sword
-1hp left
+you did 3 damage to  King of bananas with sword
+2hp left
 [1m
 [34m
 [94m[1mWhat weapon do you attack with?
@@ -73,3 +68,50 @@ King of bananas fell to ground, he has been defeated
 [37m[1m
 	1) yes
 	2) no
+you lit the Monkey forest's flame of light!
+[93mYou survived the Monkey Forest
+[37m[1m
+you follow a path from the bonfire until you find yourself on a beach.
+[1m
+[31mTHE BEACH OF INSANITY
+ [33mwhere travellers lose their minds
+[1m
+[34mThere is a small wooden boat on the beach
+[94m[1mwill you sail it or explore the coast some more?
+[37m[1m
+	1) sail
+	2) explore
+you turn left and walk along the beach.
+while you are exploring the beach something scuttles out of the water...
+[1m
+[95mLITIUS
+[35mpincher of men - 6hp
+[1m
+[34m
+[94m[1mWhat weapon do you attack with?
+[37m[1m
+	1) fists
+	2) sword
+you did 1 damage to  Litius with sword
+5hp left
+[1m
+[34m
+[94m[1mWhat weapon do you attack with?
+[37m[1m
+	1) fists
+	2) sword
+you did 2 damage to  Litius with sword
+3hp left
+[1m
+[34m
+[94m[1mWhat weapon do you attack with?
+[37m[1m
+	1) fists
+	2) sword
+you did 1 damage to  Litius with sword
+2hp left
+litius opens his pincer and grabs you
+you have been crushed
+[1m
+[31mYOU DIED
+ [33mUmbra will remain in shadow

@@ -1,3 +1,4 @@
+
 # import the modules
 
 from colorama import *
@@ -14,11 +15,11 @@ npcs = {"Guy": ("Greetings", "I am"), "Aldith": ("Hello", "I am"), "Rowan": ("Go
 
 # sword dictionary Key = name values = minimum damage, maxium damage, damage multiplier
 
-weapons = {"sword": (1, 3, 1), "fists": (0, 2, 1), "axe": (0, 3, 2), "hammer": (2, 4, 2)}
+weapons = {"sword": (1, 3, 1), "fists": (0, 2, 1), "axe": (0, 3, 2), "spear": (2,5,1), "hammer": (2, 4, 2)}
 
 # boss dictionary Key = name values = description, health
 
-bosses = {"King of bananas": ("leader of the monkeys", 5), "sea dude": ("king of the sea bed", 10)}
+bosses = {"King of bananas": ("leader of the monkeys", 5, ["finds an opening and jumps on you", "you get squashed in the process"]), "Litius": ("pincher of men", 6, ["litius opens his pincer and grabs you","you have been crushed"])}
 
 # inventory (starting with fists)
 
@@ -112,11 +113,40 @@ def scene(name, descrip, options=None):
 # gets the values from the bosses dictionary
 
 def boss(bossName):
-    description, health = bosses[bossName]
+    description, health, boss_losing = bosses[bossName]
     myprint(Style.BRIGHT)
     myprint(f'{Fore.LIGHTMAGENTA_EX}{bossName.upper()}')
     myprint(f'{Fore.MAGENTA}{description} - {health}hp')
     return description, health
+
+def boss_fight(bossName):
+  description, health, boss_losing = bosses[bossName]
+  boss(bossName)
+  for turn in range(3):
+    answer = scene("", "What weapon do you attack with?", inventory)
+    min, max, multiplier = weapons[answer]
+    damage = random.randint(min, max) * multiplier
+    health -= damage
+    if health <=0:
+      health = 0
+    myprint(f'you did {damage} damage to  {bossName} with {answer}\n{health}hp left')
+    if health <= 0:
+      break
+  if health <= 0:
+    
+    x = input()
+    myprint(f'{bossName} fell to ground, he has been defeated')
+  elif health > 0:
+    for msg in boss_losing:
+      x=input()
+      myprint(msg)
+     
+    return False
+  return True  
+
+
+   
+    
 
 
 def monkey_forest(name, npc, npc2):
@@ -217,9 +247,53 @@ def monkey_forest(name, npc, npc2):
         x = input()
         myprint("you were squashed in the process")
 
+def black_sea(name, npc, npc2):
+  global fires_lit
+
+  greeting, im = npcs[npc]
+  
+
+  myprint("you follow a path from the bonfire until you find yourself on a beach.")
+
+  area("The BEach of insanity", "where travellers lose their minds")
+
+  answer = scene("There is a small wooden boat on the beach", "will you sail it or explore the coast some more?", ["sail", "explore"])  
+  if answer == "explore":
+    myprint("you turn left and walk along the beach.")
+    x=input()
+    myprint("while you are exploring the beach something scuttles out of the water...")
+    x=input()
+    if boss_fight("Litius") is False:
+      return False  
+        
+    answer = scene("there is someone sitting on a rock behind the crab\'s corpse", "will you talk to them?", ["yes", "no"])
+    if answer == "yes":
+        myprint(f'{greeting} {name}, {im} {npc}. That\'s quite a feat you achieved. Killing that giant crab.')
+        x = input()
+        myprint("Thanks to you I can now get to my boat and sail to the island of treasure")
+        x = input()
+        myprint("legend has it a great knight got lost there and never returned home...")
+        x = input()
+        myprint("sorry for my waffling, take this axe as a token of my gratitude!")
+        inventory.append("axe")
+        x=input()
+        myprint(f'you run back to the boat before {npc} gets there and you sail away')
+    elif answer == "no":
+        myprint("You ignore the person, return back to the boat and set sail!")
+  
+  elif answer == "sail":
+    myprint("you set sail across...")
+  x=input()
+  area("The black sea", "an ocean, with no forgiveness")
+
+
+
 
 def story():
     # sys.stdout = open('story.text', 'w')
+
+    if boss_fight == False:
+      area("YOU die", "umbra will remain in shadow")
 
     npc = random.choice(list(npcs.keys()))
     npc2 = random.choice(list(npcs.keys()))
@@ -239,14 +313,28 @@ def story():
     x = input()
     myprint("Your journey will be cruel and unforgiving, but I trust you can cure the curse.")
     x = input()
+    
+
     if monkey_forest(name, npc, npc2) is True:
-        x = input()
-        myprint(Fore.LIGHTYELLOW_EX + "You survived the Monkey Forest")
+      x = input()
+      myprint(Fore.LIGHTYELLOW_EX + "You survived the Monkey Forest")
+      myprint(Fore.WHITE + Style.BRIGHT)
+      x=input()
+
+      if black_sea(name,npc , npc2) is True:
+        x=input()
+        myprint(Fore.LOGHTYELLOW_EX + "You survived the black sea")
+
+      else:
+       x = input()
+      area ("You died", "Umbra will remain in shadow")
 
 
     else:
-        x = input()
-        area("You died", "Umbra will remain in shawdow")
+      x = input()
+      area("You died", "Umbra will remain in shawdow")
+
+
 
 
 init()
