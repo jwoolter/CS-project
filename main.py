@@ -15,11 +15,11 @@ npcs = {"Guy": ("Greetings", "I am"), "Aldith": ("Hello", "I am"), "Rowan": ("Go
 
 # sword dictionary Key = name values = minimum damage, maxium damage, damage multiplier
 
-weapons = {"sword": (1, 3, 1), "fists": (0, 2, 1), "axe": (0, 3, 2), "spear": (2,5,1), "hammer": (2, 4, 2)}
+weapons = {"sword": (1, 3, 1), "fists": (0, 2, 1), "axe": (0, 3, 2), "spear": (3,4,1), "hammer": (2, 8, 1), "tentacle":(0, 1, 10)}
 
 # boss dictionary Key = name values = description, health
 
-bosses = {"King of bananas": ("leader of the monkeys", 5, ["finds an opening and jumps on you", "you get squashed in the process"]), "Litius": ("pincher of men", 6, ["litius opens his pincer and grabs you","you have been crushed"])}
+bosses = {"King of bananas": ("leader of the monkeys", 5, ["finds an opening and jumps on you", "you get squashed in the process"]), "Litius": ("pincher of men", 6, ["litius opens his pincer and grabs you","you have been crushed"]), "squid": ("creater of storms", 8, ["waves his tentacle and slaps you", "you fly into the sea unconscious"])}
 
 # inventory (starting with fists)
 
@@ -102,7 +102,7 @@ def scene(name, descrip, options=None):
     x = input()
     myprint(f'{Fore.LIGHTBLUE_EX}{Style.BRIGHT}{descrip}')
     print(Fore.WHITE + Style.BRIGHT)
-
+            
     # if you specified options ask the user to pick one.
 
     if options is not None:
@@ -268,7 +268,7 @@ def black_sea(name, npc, npc2):
         
     answer = scene("there is someone sitting on a rock behind the crab\'s corpse", "will you talk to them?", ["yes", "no"])
     if answer == "yes":
-        myprint(f'{greeting} {name}, {im} {npc}. That\'s quite a feat you achieved. Killing that giant crab.')
+        myprint(f'{greeting} {name}, {im} {npc}. That\'s quite the feat you achieved. Killing that giant crab.')
         x = input()
         myprint("Thanks to you I can now get to my boat and sail to the island of treasure")
         x = input()
@@ -285,6 +285,85 @@ def black_sea(name, npc, npc2):
     myprint("you set sail across...")
   x=input()
   area("The black sea", "an ocean, with no forgiveness")
+  answer = scene("while you are sailing you see a shark circling you in the water", "how do you fend it off", ["try and sail faster", "stab it!", "punch it's nose then set sail again"])
+  if answer == "try and sail faster":
+    myprint("you pick up the pace but the shark can swim fast")
+    x=input()
+    myprint("it leaps out of the water and swallows you whole!")
+    return False
+  elif answer == "stab it!":
+    if "sword" in inventory or "axe" in inventory:
+      myprint("you stab the shark and it dies")
+      x=input()
+      myprint("you carry on sailing") 
+    else:
+      myprint("you have nothing to stab the sword with!")
+      x=input()
+      myprint("the shark bit off your head")
+      return False
+  elif answer == "punch it's nose then set sail again":
+    myprint("you stop the boat, jump out and punch the shark in the nose!")
+    x=input()
+    myprint("it is stunned for just enough time and you sail away from the shark")
+  
+  answer = scene("You see a storm on the horrizon", "where do you go?", ["divert my course south", "divert my course north", "sail into the storm"])
+  if answer == "sail into the storm":
+    myprint("you sail directly into the storm")
+    x=input()
+    myprint("in the eye you find an island")
+    x=input()
+    myprint("and on it...")
+    x=input()
+    if boss_fight("squid") is False:
+      return False
+    myprint("the storm faded with the squid")
+    x=input()
+    answer = scene("the squid left behind one of his tentacles", "do you pick it up?", ["yes", "no"])
+    if answer == "yes":
+      myprint("you pick up the tentacle and sail on")
+      inventory.append("tentacle")
+    elif answer == "no":
+      myprint("you carry on with your journey!")
+  if answer == "divert my course south":
+    myprint("you start sailing south and then go to sleep")
+    x=input()
+    myprint("after all you havent slept since you arrived here!")
+    x=input()
+    x=input()
+    myprint("you wake up and you are on an island")
+    x=input()
+    area("The forgotten island", "a place of tranquillity")
+    x=input()
+    answer = scene("there is a lady lying down on the sand", "Will you talk to her or carry on sailing to the marked location?", ["talk","keep sailing"])
+    if answer == "talk":
+      myprint(f' hello {name} I am Spees, from Tenebrae (the city east of here)')
+      x=input()
+      myprint("I came here searching for my brother.")
+      x=input()
+      myprint("he was a very famous knight and he always strived to be better, more powerful")
+      x=input
+      myprint("because of this he went searching for an island called \"treasure island\"")
+      x=input()
+      myprint("it is said that an anccient sword is kept there called \"The great knight sword\"")
+      x=input()
+      myprint("it was named after a knight who used it to fight the king of shadows and stop the age of dark 1,000 years ago")
+      x=input()
+      myprint("my brother wanted to fight him (the king of shadows) but he never returned from his search")
+      x=input()
+      myprint("that is why I am here, to look for him so he can fight the king of shadows in Umbra castle.")
+      x=input()
+      answer = scene("", "will you help  me find him?", ["sure", "no thanks"])
+      if answer == "sure":
+        myprint("Thank you!")
+        x=input()
+        myprint("take this spear as a gift!")
+        inventory.append("spear")
+        x=input()
+      elif answer == "no thanks":
+        myprint("ok then")
+        x=input()
+      myprint("you get back in your boat and start sailing towards the marked location on your map")    
+
 
 
 
@@ -313,7 +392,7 @@ def story():
     x = input()
     myprint("Your journey will be cruel and unforgiving, but I trust you can cure the curse.")
     x = input()
-    
+
 
     if monkey_forest(name, npc, npc2) is True:
       x = input()

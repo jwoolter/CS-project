@@ -25,7 +25,10 @@ you slowly walk into the forest.
 [37m[1m
 	1) yes
 	2) no
-Bonjour Jack, je suis Pierre. nice to meet you.
+ is not a number, please select the numbers not their answers.
+	1) yes
+	2) no
+Hi Jack, I am Borin. nice to meet you.
 You will need this sword, the monkeys in this forest are very aggresive since the land was engulfed.
 You carry on through the forest
 [1m
@@ -51,8 +54,16 @@ you enter the clearing...
 [37m[1m
 	1) fists
 	2) sword
-you did 3 damage to  King of bananas with sword
-2hp left
+you did 2 damage to  King of bananas with sword
+3hp left
+[1m
+[34m
+[94m[1mWhat weapon do you attack with?
+[37m[1m
+	1) fists
+	2) sword
+you did 2 damage to  King of bananas with sword
+1hp left
 [1m
 [34m
 [94m[1mWhat weapon do you attack with?
@@ -68,7 +79,7 @@ King of bananas fell to ground, he has been defeated
 [37m[1m
 	1) yes
 	2) no
-you lit the Monkey forest's flame of light!
+you didn't light the fire and the monkey forest remained in shadows
 [93mYou survived the Monkey Forest
 [37m[1m
 you follow a path from the bonfire until you find yourself on a beach.
@@ -92,6 +103,9 @@ while you are exploring the beach something scuttles out of the water...
 [37m[1m
 	1) fists
 	2) sword
+22 is not a valid option, please try again
+	1) fists
+	2) sword
 you did 1 damage to  Litius with sword
 5hp left
 [1m
@@ -100,18 +114,83 @@ you did 1 damage to  Litius with sword
 [37m[1m
 	1) fists
 	2) sword
-you did 2 damage to  Litius with sword
-3hp left
+ is not a number, please select the numbers not their answers.
+	1) fists
+	2) sword
+you did 3 damage to  Litius with sword
+2hp left
 [1m
 [34m
 [94m[1mWhat weapon do you attack with?
 [37m[1m
 	1) fists
 	2) sword
-you did 1 damage to  Litius with sword
+you did 2 damage to  Litius with sword
+0hp left
+Litius fell to ground, he has been defeated
+[1m
+[34mthere is someone sitting on a rock behind the crab's corpse
+[94m[1mwill you talk to them?
+[37m[1m
+	1) yes
+	2) no
+Greetings Jack, I am Guy. That's quite the feat you achieved. Killing that giant crab.
+Thanks to you I can now get to my boat and sail to the island of treasure
+legend has it a great knight got lost there and never returned home...
+sorry for my waffling, take this axe as a token of my gratitude!
+you run back to the boat before Guy gets there and you sail away
+[1m
+[31mTHE BLACK SEA
+ [33man ocean, with no forgiveness
+[1m
+[34mwhile you are sailing you see a shark circling you in the water
+[94m[1mhow do you fend it off
+[37m[1m
+	1) try and sail faster
+	2) stab it!
+	3) punch it's nose then set sail again
+you stab the shark and it dies
+you carry on sailing
+[1m
+[34mYou see a storm on the horrizon
+[94m[1mwhere do you go?
+[37m[1m
+	1) divert my course south
+	2) divert my course north
+	3) sail into the storm
+you sail directly into the storm
+in the eye you find an island
+and on it...
+[1m
+[95mSQUID
+[35mcreater of storms - 8hp
+[1m
+[34m
+[94m[1mWhat weapon do you attack with?
+[37m[1m
+	1) fists
+	2) sword
+	3) axe
+you did 6 damage to  squid with axe
 2hp left
-litius opens his pincer and grabs you
-you have been crushed
+[1m
+[34m
+[94m[1mWhat weapon do you attack with?
+[37m[1m
+	1) fists
+	2) sword
+	3) axe
+you did 6 damage to  squid with axe
+0hp left
+squid fell to ground, he has been defeated
+the storm faded with the squid
+[1m
+[34mthe squid left behind one of his tentacles
+[94m[1mdo you pick it up?
+[37m[1m
+	1) yes
+	2) no
+you pick up the tentacle and sail on
 [1m
 [31mYOU DIED
  [33mUmbra will remain in shadow
