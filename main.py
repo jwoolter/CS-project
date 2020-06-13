@@ -1,7 +1,7 @@
 
 # import the modules
 
-from colorama import *
+from colorama import * 
 import random
 
 # global variables start
