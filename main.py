@@ -247,6 +247,10 @@ def monkey_forest(name, npc, npc2):
         x = input()
         myprint("you were squashed in the process")
 
+def treasure_island(name, npc, npc2):
+  area("isle of forgotten treasures", "where many secrets lie")
+   
+
 def black_sea(name, npc, npc2):
   global fires_lit
 
@@ -363,7 +367,18 @@ def black_sea(name, npc, npc2):
         myprint("ok then")
         x=input()
       myprint("you get back in your boat and start sailing towards the marked location on your map")    
-
+  elif answer == "divert my couse north":
+    myprint("you sail north for many hours")
+    x=input()
+    myprint("eventually you see land to your east")
+    x=input()
+    answer = scene("you also see a floating helmet far off in the direction your facing", "which way do you go?", ["towards the land", "towards the helmet"])
+    if answer == "towards the helmet":
+      myprint("you sail for several more hours before landing of an island")
+      if treasure_island(name, npc, npc2) is True:
+        myprint("you came off the island alive!")
+      else:
+        return False
 
 
 
