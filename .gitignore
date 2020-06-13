@@ -140,6 +140,7 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
-!/story.txt
-!/pyproject.toml
-!/poetry.lock
+./*.txt
+./*.toml
+./*.lock
+
