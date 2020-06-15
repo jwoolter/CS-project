@@ -61,10 +61,6 @@ def boss_fight(bossName):
     return True
 
 
-   
-    
-
-
 def monkey_forest(name, npc, npc2):
     global fires_lit
 
@@ -145,23 +141,17 @@ def monkey_forest(name, npc, npc2):
             myprint("you didn't light the fire and the monkey forest remained in shadows")
 
         return True
-
     else:
         return False
 
 
 # ???
-def treasure_island(name, npc, npc2):
-    area("isle of forgotten treasures", "where many secrets lie")
-
 def treasure_island(name,npc, npc2):
   area("Isle of ancient treasures", "buried with secrets")
   answer = scene("you see a chest on the ground", "do you open it?", ["yes", "no", "smack it!"])
   if answer == "yes":
     myprint("you opened the chest")
-    x=input()
     myprint("and it was a mimick!")
-    x=input()
     myprint("you manage to pull your fists out quick enough but it was close!")
   elif answer == "no":
     myprint("you carry on ignoring the chest")
@@ -169,8 +159,6 @@ def treasure_island(name,npc, npc2):
     myprint("the chest was a mimick!")
     myprint("when it died it dropped something")
     myprint("you found the attack multiplier spell")
-
-
 
 def black_sea(name, npc, npc2):
     global fires_lit
@@ -238,32 +226,23 @@ def black_sea(name, npc, npc2):
         myprint("you sail directly into the storm")
         myprint("in the eye you find an island")
         myprint("and on it...")
-
-        if boss_fight("squid") is False:
+        if boss_fight("Mr. Squid") is False:
             return False
-
         myprint("the storm faded with the squid")
-
-        answer = scene("the squid left behind one of his tentacles",
-                       "do you pick it up?",
-                       ["yes", "no"])
-
+        answer = scene("the squid left behind one of his tentacles", "do you pick it up?", ["yes", "no"])
         if answer == "yes":
             myprint("you pick up the tentacle and sail on")
             inventory.append("tentacle")
         elif answer == "no":
             myprint("you carry on with your journey!")
-
-    if answer == "divert my course south":
+    elif answer == "divert my course south":
         myprint("you start sailing south and then go to sleep")
         myprint("after all you havent slept since you arrived here!")
         myprint("you wake up and you are on an island")
 
         area("The forgotten island", "a place of tranquillity")
-
         answer = scene("there is a lady lying down on the sand",
-                       "Will you talk to her or carry on sailing to the marked location?",
-                       ["talk", "keep sailing"])
+                       "Will you talk to her or carry on sailing to the marked location?", ["talk", "keep sailing"])
 
         if answer == "talk":
             myprint(f' hello {name} I am Spees, from Tenebrae (the city east of here)')
@@ -282,25 +261,23 @@ def black_sea(name, npc, npc2):
                 myprint("Thank you!")
                 myprint("take this spear as a gift!")
                 inventory.append("spear")
-
             elif answer == "no thanks":
                 myprint("ok then")
-
             myprint("you get back in your boat and start sailing towards the marked location on your map")
-    elif answer == "divert my couse north":
-        myprint("you sail north for many hours")
-        myprint("eventually you see land to your east")
-
-        answer = scene("you also see a floating helmet far off in the direction your facing",
-                       "which way do you go?",
+    elif answer == "divert my course north":
+        myprint("you quickly divert your course North to avoid the storms wrath")
+        myprint("you sail through the whole night and finally see some land to your east")
+        answer = scene("you also see a floating helmet to your north", "where will you go?",
                        ["towards the land", "towards the helmet"])
-
-        if answer == "towards the helmet":
-            myprint("you sail for several more hours before landing of an island")
+        if answer == "towards the land":
+            myprint("yout turn east and set your course land!")
+        elif answer == "towards the helmet":
+            myprint("you sail in the direction of the helmet for several more hours")
+            myprint("finally you arrive on the island")
             if treasure_island(name, npc, npc2) is True:
-                myprint("you came off the island alive!")
+                myprint("you have survived the ilse of ancient treasures")
             else:
-                pass
+                return False
 
 
 # ???
