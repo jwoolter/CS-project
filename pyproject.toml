@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "cs-project-1"
+name = "cs-project"
 version = "0.1.0"
 description = ""
 authors = ["repl.it user <replituser@example.com>"]

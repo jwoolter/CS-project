@@ -1,4 +1,7 @@
+
 # import the modules
+
+from colorama import *
 import random
 import colorama
 from globals import *
@@ -6,6 +9,7 @@ from utilities import *
 
 
 # function for printing areas
+
 def area(title, descrip):
     myprint(f'{Fore.RED}{Style.BRIGHT}{title.upper()}')
     myprint(f'\t{Fore.YELLOW}{descrip}')
@@ -17,12 +21,14 @@ def scene(name, descrip, options=None):
     myprint(f'{Fore.LIGHTBLUE_EX}{Style.BRIGHT}{descrip}')
 
     # if you specified options ask the user to pick one.
+
     if options is not None:
         return pick(options)
 
 
 # function for printing and "making" bosses
 # gets the values from the bosses dictionary
+
 def boss(bossName):
     description, health, boss_losing = bosses[bossName]
     myprint(f'{Fore.LIGHTMAGENTA_EX}{Style.BRIGHT}{bossName.upper()}')
@@ -55,7 +61,10 @@ def boss_fight(bossName):
     return True
 
 
-# ???
+   
+    
+
+
 def monkey_forest(name, npc, npc2):
     global fires_lit
 
@@ -145,8 +154,24 @@ def monkey_forest(name, npc, npc2):
 def treasure_island(name, npc, npc2):
     area("isle of forgotten treasures", "where many secrets lie")
 
+def treasure_island(name,npc, npc2):
+  area("Isle of ancient treasures", "buried with secrets")
+  answer = scene("you see a chest on the ground", "do you open it?", ["yes", "no", "smack it!"])
+  if answer == "yes":
+    myprint("you opened the chest")
+    x=input()
+    myprint("and it was a mimick!")
+    x=input()
+    myprint("you manage to pull your fists out quick enough but it was close!")
+  elif answer == "no":
+    myprint("you carry on ignoring the chest")
+  elif answer == "smack it!":
+    myprint("the chest was a mimick!")
+    myprint("when it died it dropped something")
+    myprint("you found the attack multiplier spell")
 
-# ???
+
+
 def black_sea(name, npc, npc2):
     global fires_lit
 
