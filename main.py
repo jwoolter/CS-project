@@ -1,6 +1,5 @@
 
 # import the modules
-
 from colorama import *
 import random
 import colorama
@@ -9,7 +8,6 @@ from utilities import *
 
 
 # function for printing areas
-
 def area(title, descrip):
     myprint(f'{Fore.RED}{Style.BRIGHT}{title.upper()}')
     myprint(f'\t{Fore.YELLOW}{descrip}')
@@ -147,6 +145,8 @@ def monkey_forest(name, npc, npc2):
 
 # ???
 def treasure_island(name,npc, npc2):
+  global fires_lit
+  
   area("Isle of ancient treasures", "buried with secrets")
   answer = scene("you see a chest on the ground", "do you open it?", ["yes", "no", "smack it!"])
   if answer == "yes":
